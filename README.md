@@ -128,8 +128,8 @@ You may use `_req(paths[, parameters, method, body, options])` function for any 
 | put | /smartlock | Create a smartlock | not implemented yet |
 | delete | /smartlock/{smartlockId} | Delete a smartlock | not implemented yet |
 | get | /smartlock/{smartlockId} | Get a smartlock | __`getSmartLock(smartlockId)` since 2.0.0__ |
-| post | /smartlock/{smartlockId} | Update a smartlock | not implemented yet |
-| post | /smartlock/{smartlockId}/action | Lock & unlock a smartlock | not implemented yet |
+| post | /smartlock/{smartlockId} | Update a smartlock | __`updateSmartlock(smartlockId, update)` since 2.0.0__ |
+| post | /smartlock/{smartlockId}/action | Lock & unlock a smartlock | __`setAction(smartlockId, action)` since 2.0.0__ |
 | post | /smartlock/{smartlockId}/admin/pin | Updates a smartlock admin pin | not implemented yet |
 | post | /smartlock/{smartlockId}/advanced/config | Updates a smartlock advanced config | not implemented yet |
 | post | /smartlock/{smartlockId}/config | Updates a smartlock config | not implemented yet |
