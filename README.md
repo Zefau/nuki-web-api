@@ -122,10 +122,10 @@ Subsequently a list of supported operations. See https://api.nuki.io/ for the or
 
 | Request Type | Path | Action | Implemented |
 | ------------ | ---- | ------ | --------- |
-| get | /smartlock | Get a list of smartlocks | not implemented yet |
+| get | /smartlock | Get a list of smartlocks | `getSmartLocks(parameters)` since 2.0.0 |
 | put | /smartlock | Create a smartlock | not implemented yet |
 | delete | /smartlock/{smartlockId} | Delete a smartlock | not implemented yet |
-| get | /smartlock/{smartlockId} | Get a smartlock | not implemented yet |
+| get | /smartlock/{smartlockId} | Get a smartlock | `getSmartLock(smartlockId)` since 2.0.0 |
 | post | /smartlock/{smartlockId} | Update a smartlock | not implemented yet |
 | post | /smartlock/{smartlockId}/action | Lock & unlock a smartlock | not implemented yet |
 | post | /smartlock/{smartlockId}/admin/pin | Updates a smartlock admin pin | not implemented yet |
@@ -139,12 +139,12 @@ Subsequently a list of supported operations. See https://api.nuki.io/ for the or
 
 | Request Type | Path | Action | Implemented |
 | ------------ | ---- | ------ | --------- |
-| get | /smartlock/auth | Get a list of smartlock authorizations for your smartlocks | not implemented yet |
+| get | /smartlock/auth | Get a list of smartlock authorizations for your smartlocks | `getSmartLockAuths(parameters)` since 2.0.0 |
 | put | /smartlock/auth | Creates asynchronous smartlock authorizations | not implemented yet |
-| get | /smartlock/{smartlockId}/auth | Get a list of smartlock authorizations | not implemented yet |
+| get | /smartlock/{smartlockId}/auth | Get a list of smartlock authorizations | `getSmartLockAuth(smartlockId)` since 2.0.0 |
 | put | /smartlock/{smartlockId}/auth | Creates asynchronous a smartlock authorization | not implemented yet |
 | delete | /smartlock/{smartlockId}/auth/{id} | Deletes asynchronous a smartlock authorization | not implemented yet |
-| get | /smartlock/{smartlockId}/auth/{id} | Get a smartlock authorization | not implemented yet |
+| get | /smartlock/{smartlockId}/auth/{id} | Get a smartlock authorization | `getSmartLockAuth(smartlockId, userId)` since 2.0.0 |
 | post | /smartlock/{smartlockId}/auth/{id} | Updates asynchronous a smartlock authorization | not implemented yet |
 
 
@@ -152,8 +152,8 @@ Subsequently a list of supported operations. See https://api.nuki.io/ for the or
 
 | Request Type | Path | Action | Implemented |
 | ------------ | ---- | ------ | --------- |
-| get | /smartlock/log | Get a list of smartlock logs for all of your smartlocks | not implemented yet |
-| get | /smartlock/{smartlockId}/log | Get a list of smartlock logs | not implemented yet |
+| get | /smartlock/log | Get a list of smartlock logs for all of your smartlocks | `getSmartlockLogs(parameters)` since 2.0.0 |
+| get | /smartlock/{smartlockId}/log | Get a list of smartlock logs | `getSmartlockLogs(smartlockId, parameters)` since 2.0.0 |
 
 
 ### Subscription
