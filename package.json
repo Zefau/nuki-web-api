@@ -1,0 +1,36 @@
+{
+  "name": "nuki-web-api",
+  "version": "2.0.0",
+  "description": "Node.js implementation (using promises) of the Nuki Web API",
+  "author": {
+    "name": "zefau",
+    "email": "zefau@mailbox.org"
+  },
+  
+  "homepage": "https://github.com/Zefau/nuki-web-api",
+  "license": "MIT",
+  "keywords": [
+    "nuki",
+    "lock",
+    "door"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Zefau/nuki-web-api"
+  },
+  "bugs": {
+    "url": "https://github.com/Zefau/nuki-web-api/issues"
+  },
+  
+  "readmeFilename": "README.md",
+  "dependencies": {
+    "request-promise": "^4.2.4"
+  },
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
