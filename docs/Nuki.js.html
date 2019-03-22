@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Nuki.js - Documentation</title>
+
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav>
+    <li class="nav-link nav-home-link"><a href="index.html">Home</a></li><li class="nav-heading">Classes</li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="Nuki.html">Nuki</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Nuki.html#.module.exports.getAccount">module.exports.getAccount</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Nuki.html#.module.exports.getSmartlock">module.exports.getSmartlock</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Nuki.html#.module.exports.getSmartlockAuth">module.exports.getSmartlockAuth</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Nuki.html#.module.exports.getSmartlockAuths">module.exports.getSmartlockAuths</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Nuki.html#.module.exports.getSmartlockLogs">module.exports.getSmartlockLogs</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Nuki.html#.module.exports.getSmartlocks">module.exports.getSmartlocks</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Nuki.html#.module.exports.getSmartlockUsers">module.exports.getSmartlockUsers</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Nuki.html#.module.exports.getSubscription">module.exports.getSubscription</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Nuki.html#_req">_req</a></span></li>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">Nuki.js</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>'use strict';
+
+const _request = require('request-promise');
+
+
+/**
+ * The constructor for a connection to the Nuki Web API.
+ *
+ * @class Nuki Web
+ * @author Zefau &lt;zefau@mailbox.rg>
+ * @license MIT
+ * @version 2.0.0
+ *
+ * @param {String}			token				Token for authentication
+ * @param {Object}			[options]			Further options
+ * @param {String}			[options.url]		Override default API url (which is https://api.nuki.io)
+ * @returns {Nuki}
+ *
+ * @constructor
+ * @description Based on Nuki Web API v.1.1.1 as of 30.08.2018
+ * @see https://developer.nuki.io/page/nuki-web-api-111/3/
+ *
+ */
+let Nuki = function Nuki(token, options = {})
+{
+	if (!(this instanceof Nuki))
+		return new Nuki(token);
+	
+	this.token = token;
+	this.url = options.url || 'https://api.nuki.io';
+	
+	if (!this.token)
+		throw new Error('API Token required! Please check the arguments!');
+};
+
+
+/**
+ * This function requests an action.
+ *
+ * @memberof Nuki
+ * @param {String|Array}	paths				Paths to attach to URL
+ * @param {Object}			[parameters={}]		Parameters to attach to URL ({key: value} turns to ?key=value respectively &amp;key=value)
+ * @param {String}			[method=GET]		Method to use [GET, POST, PUT, DELETE]
+ * @param {String}			[body={}]			Body data to send
+ * @param {String}			[options={}]		Additional options to use
+ * @returns {Promise&lt;Object>}
+ */
+Nuki.prototype._req = function _req(paths, parameters, method, body, options)
+{
+	paths = (paths ? ('/' + (typeof paths === 'string' ? paths : paths.join('/'))) : '');
+	
+	let params = Object.keys(parameters || {});
+	params = params.length ? '?' + params.map(function(key) {return key + '=' + parameters[key]}).join('&amp;') : '';
+	
+	return _request(Object.assign(options || {},
+	{
+		url: this.url + paths + params,
+		method: method || 'GET',
+		headers: {'Authorization': 'Bearer ' + this.token},
+		body: body || {},
+		json: true
+	}));
+};
+
+
+
+
+Nuki.prototype = {
+	...Nuki.prototype,
+	...require('./Account'),
+	...require('./Smartlock'),
+	...require('./SmartlockAuth'),
+	...require('./SmartlockLog'),
+	...require('./Subscription'),
+}
+
+module.exports = Nuki;
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<br class="clear">
+
+<footer>
+    Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Fri Mar 22 2019 18:49:19 GMT+0100 (GMT+01:00) using the Minami theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+</body>
+</html>

@@ -6,7 +6,6 @@
     "name": "zefau",
     "email": "zefau@mailbox.org"
   },
-  
   "homepage": "https://github.com/Zefau/nuki-web-api",
   "license": "MIT",
   "keywords": [
@@ -21,7 +20,6 @@
   "bugs": {
     "url": "https://github.com/Zefau/nuki-web-api/issues"
   },
-  
   "readmeFilename": "README.md",
   "dependencies": {
     "request-promise": "^4.2.4"
