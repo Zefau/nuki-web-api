@@ -24,7 +24,7 @@
 <label for="nav-trigger" class="overlay"></label>
 
 <nav>
-    <li class="nav-link nav-home-link"><a href="index.html">Home</a></li><li class="nav-heading">Classes</li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="Nuki.html">Nuki</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Nuki.html#.module.exports.getAccount">module.exports.getAccount</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Nuki.html#.module.exports.getSmartlock">module.exports.getSmartlock</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Nuki.html#.module.exports.getSmartlockAuth">module.exports.getSmartlockAuth</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Nuki.html#.module.exports.getSmartlockAuths">module.exports.getSmartlockAuths</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Nuki.html#.module.exports.getSmartlockLogs">module.exports.getSmartlockLogs</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Nuki.html#.module.exports.getSmartlocks">module.exports.getSmartlocks</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Nuki.html#.module.exports.getSmartlockUsers">module.exports.getSmartlockUsers</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Nuki.html#.module.exports.getSubscription">module.exports.getSubscription</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Nuki.html#_req">_req</a></span></li>
+    <li class="nav-link nav-home-link"><a href="index.html">Home</a></li><li class="nav-heading">Classes</li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="Nuki.html">Nuki</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Nuki.html#.module.exports.getAccount">module.exports.getAccount</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Nuki.html#.module.exports.getSmartlock">module.exports.getSmartlock</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Nuki.html#.module.exports.getSmartlockAuth">module.exports.getSmartlockAuth</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Nuki.html#.module.exports.getSmartlockAuths">module.exports.getSmartlockAuths</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Nuki.html#.module.exports.getSmartlockLogs">module.exports.getSmartlockLogs</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Nuki.html#.module.exports.getSmartlocks">module.exports.getSmartlocks</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Nuki.html#.module.exports.getSmartlockUsers">module.exports.getSmartlockUsers</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Nuki.html#.module.exports.getSubscription">module.exports.getSubscription</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Nuki.html#.module.exports.setAction">module.exports.setAction</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Nuki.html#.module.exports.updateSmartlock">module.exports.updateSmartlock</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Nuki.html#_req">_req</a></span></li>
 </nav>
 
 <div id="main">
@@ -46,7 +46,7 @@
  * This function returns a list of locks.
  *
  * @memberof Nuki
- * @description Get a list of smartlocks
+ * @description This function returns a list of locks.
  * @param {Object}			[parameters]		Parameters to use
  * @param {Integer}			parameters.authId	Filter for authId
  * @param {Integer}			parameters.type		Filter for type
@@ -71,7 +71,7 @@ module.exports.getSmartlocks = function(parameters)
  * This function returns a specific lock.
  *
  * @memberof Nuki
- * @description Get a smartlock
+ * @description This function returns a specific lock.
  * @param {Integer}			smartlockId			The smartlock id
  * @returns {Promise}
  * @see https://api.nuki.io/#!/Smartlock/get_0
@@ -89,6 +89,65 @@ module.exports.getSmartlock = function(smartlockId)
 			return lock;
 		});
 };
+
+/**
+ * This function updates a smartlock.
+ *
+ * @memberof Nuki
+ * @description This function updates a smartlock.
+ * @param {Integer}			smartlockId			The smartlock id
+ * @param {Object|Boolean}	update				Values to be updated, if {Object} is provided, either or both the indizes name and favorite have to be supplied, otherwise {Boolean} for a shortcut to favorite
+ * @param {String}			[update.name]		The new name of the smartlock
+ * @param {Boolean}			[update.favorite]	True if the smartlock is favorite
+ * @returns {Promise}
+ * @see https://api.nuki.io/#!/Smartlock/post
+ */
+module.exports.updateSmartlock = function(smartlockId, update)
+{
+	let set = {}
+	if (typeof update == 'object')
+		['name', 'favorite'].forEach(function(key) {if (update[key]) set[key] = update[key]});
+	
+	else if (typeof update == 'boolean' || typeof update == 'number')
+		set = {favorite: !!update}
+	
+	if (!Object.keys(set).length)
+		throw new Error('Incorrect parameter supplied to function updateSmartlock()!');
+	
+	let self = this;
+	return this
+		._req('smartlock/' + smartlockId, {}, 'POST', set)
+		.then(function()
+		{
+			return true;
+		});
+};
+
+/**
+ * This function applies an action on your smartolock, e.g. lock, unlock or unlatch.
+ *
+ * @memberof Nuki
+ * @description This function applies an action on your smartolock, e.g. lock, unlock or unlatch.
+ * @param {Integer}			smartlockId			The smartlock id
+ * @param {Object|Integer}	action				Action to be applied, if {Object} is provided, the indizes command and option have to be supplied, otherwise {Integer} for a shortcut of action.command
+ * @param {Integer}			action.command		The action - 1: unlock, 2: lock, 3: unlatch, 4: lockngo, 5: lockngo with unlatch
+ * @param {Integer}			[action.option]		The option mask: 0: none, 2: force, 4: full lock
+ * @returns {Promise}
+ * @see https://api.nuki.io/#!/Smartlock/post_0
+ */
+module.exports.setAction = function(smartlockId, action)
+{
+	if ((typeof action == 'object' &amp;&amp; !action.command) || (typeof action != 'object' &amp;&amp; !Number.isInteger(action)))
+		throw new Error('Incorrect parameter supplied to function setAction()!');
+	
+	let self = this;
+	return this
+		._req('smartlock/' + smartlockId + '/action', {}, 'POST', Number.isInteger(action) ? {action: action} : {action: action.command, option: action.option})
+		.then(function()
+		{
+			return true;
+		});
+};
 </code></pre>
         </article>
     </section>
@@ -101,7 +160,7 @@ module.exports.getSmartlock = function(smartlockId)
 <br class="clear">
 
 <footer>
-    Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Fri Mar 22 2019 18:49:19 GMT+0100 (GMT+01:00) using the Minami theme.
+    Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Fri Mar 22 2019 19:46:38 GMT+0100 (GMT+01:00) using the Minami theme.
 </footer>
 
 <script>prettyPrint();</script>

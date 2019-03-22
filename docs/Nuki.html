@@ -24,7 +24,7 @@
 <label for="nav-trigger" class="overlay"></label>
 
 <nav>
-    <li class="nav-link nav-home-link"><a href="index.html">Home</a></li><li class="nav-heading">Classes</li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="Nuki.html">Nuki</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Nuki.html#.module.exports.getAccount">module.exports.getAccount</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Nuki.html#.module.exports.getSmartlock">module.exports.getSmartlock</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Nuki.html#.module.exports.getSmartlockAuth">module.exports.getSmartlockAuth</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Nuki.html#.module.exports.getSmartlockAuths">module.exports.getSmartlockAuths</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Nuki.html#.module.exports.getSmartlockLogs">module.exports.getSmartlockLogs</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Nuki.html#.module.exports.getSmartlocks">module.exports.getSmartlocks</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Nuki.html#.module.exports.getSmartlockUsers">module.exports.getSmartlockUsers</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Nuki.html#.module.exports.getSubscription">module.exports.getSubscription</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Nuki.html#_req">_req</a></span></li>
+    <li class="nav-link nav-home-link"><a href="index.html">Home</a></li><li class="nav-heading">Classes</li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="Nuki.html">Nuki</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Nuki.html#.module.exports.getAccount">module.exports.getAccount</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Nuki.html#.module.exports.getSmartlock">module.exports.getSmartlock</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Nuki.html#.module.exports.getSmartlockAuth">module.exports.getSmartlockAuth</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Nuki.html#.module.exports.getSmartlockAuths">module.exports.getSmartlockAuths</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Nuki.html#.module.exports.getSmartlockLogs">module.exports.getSmartlockLogs</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Nuki.html#.module.exports.getSmartlocks">module.exports.getSmartlocks</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Nuki.html#.module.exports.getSmartlockUsers">module.exports.getSmartlockUsers</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Nuki.html#.module.exports.getSubscription">module.exports.getSubscription</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Nuki.html#.module.exports.setAction">module.exports.setAction</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Nuki.html#.module.exports.updateSmartlock">module.exports.updateSmartlock</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Nuki.html#_req">_req</a></span></li>
 </nav>
 
 <div id="main">
@@ -528,7 +528,7 @@
 
 
 <div class="description">
-    Get a smartlock
+    This function returns a specific lock.
 </div>
 
 
@@ -1518,7 +1518,7 @@
 
 
 <div class="description">
-    Get a list of smartlocks
+    This function returns a list of locks.
 </div>
 
 
@@ -2164,6 +2164,586 @@
 
     
 
+    <h4 class="name" id=".module.exports.setAction"><span class="type-signature">(static) </span>module.exports.setAction<span class="signature">(smartlockId, action)</span><span class="type-signature"> &rarr; {Promise}</span></h4>
+
+    
+
+
+
+<div class="description">
+    This function applies an action on your smartolock, e.g. lock, unlock or unlatch.
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Smartlock.js.html">Smartlock.js</a>, <a href="Smartlock.js.html#line97">line 97</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="https://api.nuki.io/#!/Smartlock/post_0">https://api.nuki.io/#!/Smartlock/post_0</a></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>smartlockId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>Integer</code></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                The smartlock id
+                
+            </td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>action</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>Object</code></span>
+|
+
+<span class="param-type"><code>Integer</code></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                Action to be applied, if {Object} is provided, the indizes command and option have to be supplied, otherwise {Integer} for a shortcut of action.command
+                
+                    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>command</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>Integer</code></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">
+                The action - 1: unlock, 2: lock, 3: unlatch, 4: lockngo, 5: lockngo with unlatch
+                
+            </td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>option</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>Integer</code></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">
+                The option mask: 0: none, 2: force, 4: full lock
+                
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+                
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="section-returns">
+<h5>Returns:</h5>
+
+        
+
+<dl class="param-type">
+    <dt>
+        Type:
+    </dt>
+    <dd>
+        
+<span class="param-type"><code>Promise</code></span>
+
+
+    </dd>
+</dl>
+
+
+    
+</div>
+
+
+
+</div>
+        
+            
+<div class="section-method">
+
+    
+
+    <h4 class="name" id=".module.exports.updateSmartlock"><span class="type-signature">(static) </span>module.exports.updateSmartlock<span class="signature">(smartlockId, update)</span><span class="type-signature"> &rarr; {Promise}</span></h4>
+
+    
+
+
+
+<div class="description">
+    This function updates a smartlock.
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Smartlock.js.html">Smartlock.js</a>, <a href="Smartlock.js.html#line64">line 64</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="https://api.nuki.io/#!/Smartlock/post">https://api.nuki.io/#!/Smartlock/post</a></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>smartlockId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>Integer</code></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                The smartlock id
+                
+            </td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>update</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>Object</code></span>
+|
+
+<span class="param-type"><code>Boolean</code></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                Values to be updated, if {Object} is provided, either or both the indizes name and favorite have to be supplied, otherwise {Boolean} for a shortcut to favorite
+                
+                    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>name</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>String</code></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">
+                The new name of the smartlock
+                
+            </td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>favorite</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>Boolean</code></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">
+                True if the smartlock is favorite
+                
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+                
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="section-returns">
+<h5>Returns:</h5>
+
+        
+
+<dl class="param-type">
+    <dt>
+        Type:
+    </dt>
+    <dd>
+        
+<span class="param-type"><code>Promise</code></span>
+
+
+    </dd>
+</dl>
+
+
+    
+</div>
+
+
+
+</div>
+        
+            
+<div class="section-method">
+
+    
+
     <h4 class="name" id="_req"><span class="type-signature"></span>_req<span class="signature">(paths, parameters<span class="signature-attributes">opt</span>, method<span class="signature-attributes">opt</span>, body<span class="signature-attributes">opt</span>, options<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Promise.&lt;Object>}</span></h4>
 
     
@@ -2519,7 +3099,7 @@
 <br class="clear">
 
 <footer>
-    Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Fri Mar 22 2019 18:49:19 GMT+0100 (GMT+01:00) using the Minami theme.
+    Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Fri Mar 22 2019 19:46:38 GMT+0100 (GMT+01:00) using the Minami theme.
 </footer>
 
 <script>prettyPrint();</script>
