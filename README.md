@@ -20,13 +20,15 @@ The source code documentation for this Node.js implementation of the Nuki Web AP
 
 Subsequently a list of supported operations. See https://api.nuki.io/ for the original list of operations.
 
+You may use `_req(paths[, parameters, method, body, options])` function for any of the following operations, e.g. `_req('/account')`. See API documentation for specific usage.
+
 
 ### Account
 
 | Request Type | Path | Action | Implemented |
 | ------------ | ---- | ------ | --------- |
 | delete | /account | Delete an account | not implemented yet |
-| get | /account | Get an account | not implemented yet |
+| get | /account | Get an account | __`getAccount()` since 2.0.0__ |
 | post | /account | Update an account | not implemented yet |
 | put | /account | Create an account | not implemented yet |
 | delete | /account/otp | Disables one time password for an account | not implemented yet |
