@@ -8,7 +8,76 @@ Node.js implementation of the Nuki Web API
 
 
 ## Usage
-Coming soon..
+
+```
+let token = "YOUR TOKEN"
+let nuki = new Nuki(token)
+
+nuki.getAccount().then(function(res) {
+	console.log('getAccount(): ' + JSON.stringify(res))
+
+}).catch(function(e) {console.error('getAccount(): ' + e.message)});
+
+nuki.getSmartlocks().then(function(res) {
+	console.log('getSmartlocks(): ' + JSON.stringify(res))
+
+}).catch(function(e) {console.error('getSmartlocks(): ' + e.message)});
+
+nuki.getSmartlock(smartlockId).then(function(res) {
+	console.log('getSmartlock(smartlockId): ' + JSON.stringify(res))
+
+}).catch(function(e) {console.error('getSmartlock(smartlockId): ' + e.message)});
+
+nuki.getSmartlockAuths().then(function(res) {
+	console.log('getSmartlockAuths(): ' + JSON.stringify(res))
+
+}).catch(function(e) {console.error('getSmartlockAuths(): ' + e.message)});
+
+nuki.getSmartlockUsers().then(function(res) {
+	console.log('getSmartlockUsers(): ' + JSON.stringify(res))
+
+}).catch(function(e) {console.error('getSmartlockUsers(): ' + e.message)});
+
+nuki.getSmartlockAuth(smartlockId).then(function(res) {
+	console.log('getSmartlockAuth(smartlockId): ' + JSON.stringify(res))
+
+}).catch(function(e) {console.error('getSmartlockAuth(smartlockId): ' + e.message)});
+
+nuki.getSmartlockAuth(smartlockId, userId).then(function(res) {
+	console.log('getSmartlockAuth(smartlockId, userId): ' + JSON.stringify(res))
+
+}).catch(function(e) {console.error('getSmartLockAuth(smartlockId, userId): ' + e.message)});
+
+nuki.getSmartlockLogs().then(function(res) {
+	console.log('getSmartlockLogs(): ' + JSON.stringify(res))
+
+}).catch(function(e) {console.error('getSmartlockLogs(): ' + e.message)});
+
+nuki.getSmartlockLogs({limit: 3}).then(function(res) {
+	console.log('getSmartlockLogs({limit: 3}): ' + JSON.stringify(res))
+
+}).catch(function(e) {console.error('getSmartlockLogs({limit: 3}): ' + e.message)});
+
+nuki.getSmartlockLogs(smartlockId).then(function(res) {
+	console.log('getSmartlockLogs(smartlockId): ' + JSON.stringify(res))
+
+}).catch(function(e) {console.error('getSmartlockLogs(smartlockId): ' + e.message)});
+
+nuki.getSmartlockLogs(smartlockId, {limit: 3}).then(function(res) {
+	console.log('getSmartlockLogs(smartlockId, {limit: 3}): ' + JSON.stringify(res))
+
+}).catch(function(e) {console.error('getSmartlockLogs(smartlockId, {limit: 3}): ' + e.message)});
+
+nuki.getSubscription().then(function(res) {
+	console.log('getSubscription(): ' + JSON.stringify(res))
+
+}).catch(function(e) {console.error('getSubscription(): ' + e.message)});
+
+nuki.getSubscription(subscriptionId).then(function(res) {
+	console.log('getSubscription(subscriptionId): ' + JSON.stringify(res))
+
+}).catch(function(e) {console.error('getSubscription(subscriptionId): ' + e.message)});
+```
 
 
 ## Example
@@ -167,6 +236,9 @@ You may use `_req(paths[, parameters, method, body, options])` function for any 
 
 
 ## Changelog
+
+### 2.0.1 (2019-03-22)
+- (zefau) Node.js v6 compatibility
 
 ### 2.0.0 (2019-03-22)
 - (zefau) Refactored the API implementation using [request-promise](https://www.npmjs.com/package/request-promise)
