@@ -3,6 +3,7 @@ Node.js implementation of the Nuki Web API
 
 [![NPM version](http://img.shields.io/npm/v/nuki-web-api.svg)](https://www.npmjs.com/package/nuki-web-api)
 [![Downloads](https://img.shields.io/npm/dm/nuki-web-api.svg)](https://www.npmjs.com/package/nuki-web-api)
+[![Travis CI](https://travis-ci.org/Zefau/nuki-web-api.svg?branch=master)](https://travis-ci.org/Zefau/nuki-web-api)
 
 [![NPM](https://nodei.co/npm/nuki-web-api.png?downloads=true)](https://nodei.co/npm/nuki-web-api/)
 
