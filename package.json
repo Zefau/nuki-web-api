@@ -24,7 +24,7 @@
   "dependencies": {
     "request-promise": "^4.2.4"
   },
-  “devDependencies": {
+  "devDependencies": {
     "jshint": "^2.10.2"
   },
   "main": "index.js",
