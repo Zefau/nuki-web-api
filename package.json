@@ -24,6 +24,9 @@
   "dependencies": {
     "request-promise": "^4.2.4"
   },
+  “devDependencies": {
+    "jshint": "^2.10.2"
+  },
   "main": "index.js",
   "directories": {
     "lib": "lib"
