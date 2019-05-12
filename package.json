@@ -32,6 +32,6 @@
     "lib": "lib"
   },
   "scripts": {
-    "test": "eslint **/*.js"
+    "test": "eslint *.js lib/*.js"
   }
 }
