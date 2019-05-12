@@ -25,13 +25,13 @@
     "request-promise": "^4.2.4"
   },
   "devDependencies": {
-    "jshint": "^2.10.2"
+    "eslint": "^5.16.0"
   },
   "main": "index.js",
   "directories": {
     "lib": "lib"
   },
   "scripts": {
-    "test": "jshint hello.js"
+    "test": "eslint **/*.js"
   }
 }
