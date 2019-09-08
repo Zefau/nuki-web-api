@@ -185,10 +185,10 @@ You may use `_req(paths[, parameters, method, body, options])` function for any 
 
 | Request Type | Path | Action | Implemented |
 | ------------ | ---- | ------ | --------- |
-| get | /notification | Get all notifications attached to your account | not implemented yet |
+| get | /notification | Get all notifications attached to your account | __`getNotification()` since 2.1.0__ |
 | put | /notification | Create a notification configuration | not implemented yet |
 | delete | /notification/{notificationId} | Delete a notification configuration | not implemented yet |
-| get | /notification/{notificationId} | Get a notification configuration | not implemented yet |
+| get | /notification/{notificationId} | Get a notification configuration | __`getNotification(notificationId)` since 2.1.0__ |
 | post | /notification/{notificationId} | Update a notification configuration | not implemented yet |
 
 
@@ -196,16 +196,16 @@ You may use `_req(paths[, parameters, method, body, options])` function for any 
 
 | Request Type | Path | Action | Implemented |
 | ------------ | ---- | ------ | --------- |
-| get | /opener/brand | Get all intercom brands | not implemented yet |
-| get | /opener/brand/{brandId} | Get an intercom brand | not implemented yet |
+| get | /opener/brand | Get all intercom brands | __`getBrand()` since 2.1.0__ |
+| get | /opener/brand/{brandId} | Get an intercom brand | __`getBrand(brandId)` since 2.1.0__ |
 
 
 ### OpenerIntercomModel (introduced in Nuki Web API v1.2.0)
 
 | Request Type | Path | Action | Implemented |
 | ------------ | ---- | ------ | --------- |
-| get | /opener/intercom | Get a list of intercom models | not implemented yet |
-| get | /opener/intercom/{intercomId} | Get an intercom model | not implemented yet |
+| get | /opener/intercom | Get a list of intercom models | __`getModel()` since 2.1.0__ |
+| get | /opener/intercom/{intercomId} | Get an intercom model | __`getModel(intercomId)` since 2.1.0__ |
 
 
 ### Service
