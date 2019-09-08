@@ -24,7 +24,7 @@
 <label for="nav-trigger" class="overlay"></label>
 
 <nav>
-    <li class="nav-link nav-home-link"><a href="index.html">Home</a></li><li class="nav-heading">Classes</li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="Nuki.html">Nuki</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Nuki.html#.module.exports.getAccount">module.exports.getAccount</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Nuki.html#.module.exports.getSmartlock">module.exports.getSmartlock</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Nuki.html#.module.exports.getSmartlockAuth">module.exports.getSmartlockAuth</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Nuki.html#.module.exports.getSmartlockAuths">module.exports.getSmartlockAuths</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Nuki.html#.module.exports.getSmartlockLogs">module.exports.getSmartlockLogs</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Nuki.html#.module.exports.getSmartlocks">module.exports.getSmartlocks</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Nuki.html#.module.exports.getSmartlockUsers">module.exports.getSmartlockUsers</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Nuki.html#.module.exports.getSubscription">module.exports.getSubscription</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Nuki.html#.module.exports.setAction">module.exports.setAction</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Nuki.html#.module.exports.updateSmartlock">module.exports.updateSmartlock</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Nuki.html#_req">_req</a></span></li>
+    <li class="nav-link nav-home-link"><a href="index.html">Home</a></li><li class="nav-heading">Classes</li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="Nuki.html">Nuki</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Nuki.html#.module.exports.getAccount">module.exports.getAccount</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Nuki.html#.module.exports.getBrand">module.exports.getBrand</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Nuki.html#.module.exports.getModel">module.exports.getModel</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Nuki.html#.module.exports.getNotification">module.exports.getNotification</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Nuki.html#.module.exports.getSmartlock">module.exports.getSmartlock</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Nuki.html#.module.exports.getSmartlockAuth">module.exports.getSmartlockAuth</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Nuki.html#.module.exports.getSmartlockAuths">module.exports.getSmartlockAuths</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Nuki.html#.module.exports.getSmartlockLogs">module.exports.getSmartlockLogs</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Nuki.html#.module.exports.getSmartlocks">module.exports.getSmartlocks</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Nuki.html#.module.exports.getSmartlockUsers">module.exports.getSmartlockUsers</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Nuki.html#.module.exports.getSubscription">module.exports.getSubscription</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Nuki.html#.module.exports.setAction">module.exports.setAction</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Nuki.html#.module.exports.updateSmartlock">module.exports.updateSmartlock</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Nuki.html#_req">_req</a></span></li>
 </nav>
 
 <div id="main">
@@ -62,16 +62,18 @@ const _request = require('request-promise');
  * @see https://developer.nuki.io/page/nuki-web-api-111/3/
  *
  */
-let Nuki = function Nuki(token, options = {})
+let Nuki = function Nuki(token, options)
 {
 	if (!(this instanceof Nuki))
 		return new Nuki(token);
 	
-	this.token = token;
-	this.url = options.url || 'https://api.nuki.io';
-	
-	if (!this.token)
+	if (!token)
 		throw new Error('API Token required! Please check the arguments!');
+	
+	this.token = token;
+	
+	options = options || {}
+	this.url = options.url || 'https://api.nuki.io';
 };
 
 
@@ -106,14 +108,18 @@ Nuki.prototype._req = function _req(paths, parameters, method, body, options)
 
 
 
-Nuki.prototype = {
-	...Nuki.prototype,
-	...require('./Account'),
-	...require('./Smartlock'),
-	...require('./SmartlockAuth'),
-	...require('./SmartlockLog'),
-	...require('./Subscription'),
-}
+Nuki.prototype = Object.assign(
+	{},
+	Nuki.prototype,
+	require('./Account'),
+	require('./Notification'),
+	require('./OpenerIntercomBrand'),
+	require('./OpenerIntercomModel'),
+	require('./Smartlock'),
+	require('./SmartlockAuth'),
+	require('./SmartlockLog'),
+	require('./Subscription')
+);
 
 module.exports = Nuki;
 </code></pre>
@@ -128,7 +134,7 @@ module.exports = Nuki;
 <br class="clear">
 
 <footer>
-    Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Fri Mar 22 2019 19:46:38 GMT+0100 (GMT+01:00) using the Minami theme.
+    Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Sun Sep 08 2019 22:07:49 GMT+0200 (GMT+02:00) using the Minami theme.
 </footer>
 
 <script>prettyPrint();</script>

@@ -24,9 +24,7 @@
   "dependencies": {
     "request-promise": "^4.2.4"
   },
-  "devDependencies": {
-    "eslint": "^5.16.0"
-  },
+  "devDependencies": {},
   "main": "index.js",
   "directories": {
     "lib": "lib"

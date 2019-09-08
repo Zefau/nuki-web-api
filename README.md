@@ -86,10 +86,10 @@ nuki.getSubscription(subscriptionId).then(function(res) {
 You may find a full implemented example at [https://github.com/Zefau/ioBroker.nuki2](https://github.com/Zefau/ioBroker.nuki2).
 
 
-## API documentation
+## API documentation (v1.2.0, 31.05.2019)
 The source code documentation for this Node.js implementation of the Nuki Web API can be found at https://zefau.github.io/nuki-web-api/Nuki.html.
 
-Subsequently a list of supported operations. See https://api.nuki.io/ for the original list of operations.
+Subsequently a list of supported operations. See https://developer.nuki.io/page/nuki-web-api-120/3 for Nuki Web API documentation and https://api.nuki.io/ for the original list of operations.
 
 You may use `_req(paths[, parameters, method, body, options])` function for any of the following operations, e.g. `_req('/account')`. See API documentation for specific usage.
 
@@ -181,6 +181,33 @@ You may use `_req(paths[, parameters, method, body, options])` function for any 
 | get | /company | Get an list of companies | not implemented yet |
 
 
+### Notification (introduced in Nuki Web API v1.2.0)
+
+| Request Type | Path | Action | Implemented |
+| ------------ | ---- | ------ | --------- |
+| get | /notification | Get all notifications attached to your account | not implemented yet |
+| put | /notification | Create a notification configuration | not implemented yet |
+| delete | /notification/{notificationId} | Delete a notification configuration | not implemented yet |
+| get | /notification/{notificationId} | Get a notification configuration | not implemented yet |
+| post | /notification/{notificationId} | Update a notification configuration | not implemented yet |
+
+
+### OpenerIntercomBrand (introduced in Nuki Web API v1.2.0)
+
+| Request Type | Path | Action | Implemented |
+| ------------ | ---- | ------ | --------- |
+| get | /opener/brand | Get all intercom brands | not implemented yet |
+| get | /opener/brand/{brandId} | Get an intercom brand | not implemented yet |
+
+
+### OpenerIntercomModel (introduced in Nuki Web API v1.2.0)
+
+| Request Type | Path | Action | Implemented |
+| ------------ | ---- | ------ | --------- |
+| get | /opener/intercom | Get a list of intercom models | not implemented yet |
+| get | /opener/intercom/{intercomId} | Get an intercom model | not implemented yet |
+
+
 ### Service
 
 | Request Type | Path | Action | Implemented |
@@ -239,11 +266,15 @@ You may use `_req(paths[, parameters, method, body, options])` function for any 
 
 ## Changelog
 
+### 2.1.0 (2019-09-08)
+- (Zefau) added Opener support
+- (Zefau) added Notification support
+
 ### 2.0.1 (2019-03-22)
-- (zefau) Node.js v6 compatibility
+- (Zefau) Node.js v6 compatibility
 
 ### 2.0.0 (2019-03-22)
-- (zefau) Refactored the API implementation using [request-promise](https://www.npmjs.com/package/request-promise)
+- (Zefau) refactored the API implementation using [request-promise](https://www.npmjs.com/package/request-promise)
 
 
 ## API Documentation (using JSDoc)
