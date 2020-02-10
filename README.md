@@ -227,8 +227,9 @@ You may use `_req(paths[, parameters, method, body, options])` function for any 
 | post | /smartlock/{smartlockId} | Update a smartlock | __`updateSmartlock(smartlockId, update)` since 2.0.0__ |
 | post | /smartlock/{smartlockId}/action | Lock & unlock a smartlock | __`setAction(smartlockId, action)` since 2.0.0__ |
 | post | /smartlock/{smartlockId}/admin/pin | Updates a smartlock admin pin | not implemented yet |
-| post | /smartlock/{smartlockId}/advanced/config | Updates a smartlock advanced config | not implemented yet |
-| post | /smartlock/{smartlockId}/config | Updates a smartlock config | not implemented yet |
+| post | /smartlock/{smartlockId}/advanced/config | Updates a smartlock advanced config | __`setAdvancedConfig(smartlockId, configuration)` since 2.2.0__ |
+| post | /smartlock/{smartlockId}/advanced/openerconfig | Updates an opener advanced config | __`setAdvancedConfig(smartlockId, configuration)` since 2.2.0__ |
+| post | /smartlock/{smartlockId}/config | Updates a smartlock config | __`setConfig(smartlockId, configuration)` since 2.2.0__ |
 | post | /smartlock/{smartlockId}/sync | Syncs a smartlock | not implemented yet |
 | post | /smartlock/{smartlockId}/web/config | Updates a smartlock web config | not implemented yet |
 
