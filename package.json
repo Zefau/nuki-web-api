@@ -1,6 +1,6 @@
 {
   "name": "nuki-web-api",
-  "version": "2.1.1",
+  "version": "2.2.0",
   "description": "Node.js implementation (using promises) of the Nuki Web API",
   "author": {
     "name": "zefau",
